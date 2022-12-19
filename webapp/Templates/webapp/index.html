@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iphoneprice</title>
+    <style>
+       .imgs{
+          margin-left: 40px;
+          margin-right: 20px;
+          border-radius: 10%;
+          box-shadow: 10;
+       }
+    </style>
+</head>
+<body>
+    <h1 align="center">Iphone price predictor</h1>
+    <div align="center">
+      <form action="result" method="post">
+        {%csrf_token%}
+        <p>Enter the model number:</p>
+        <input type="number" name="version" id=""><br>
+        <input type="submit" value="submit">
+      </form>
+    </div>
+    {%if version and model%}
+    <p align="center">The price of iphone {{model}} will be {{version}} USD </p>
+    {%endif%}
+</body>
+</html>
